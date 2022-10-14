@@ -1,12 +1,12 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var path = require('path');
-var app = express();
+let express = require('express');
+let bodyParser = require('body-parser');
+let path = require('path');
+let app = express();
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
 
-var data = [];
-var root = path.resolve(__dirname) + '/public/';
+let data = [];
+let root = path.resolve(__dirname) + '/public/';
 app.get('/', (req, res) => {
     res.sendFile('block.html', { 'root': root });
 });
